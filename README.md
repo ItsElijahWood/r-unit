@@ -12,27 +12,29 @@ Add the library
 
 ## Documentation
 
+### Math Library
+
 Check if two parameters which take an Any type are an equal value to each other
 ```
-    use r_unit::is_equal;
+    use r_unit::math;
 
     let a = 5;
     let b = 5;
 
-    is_equal::is_equal(&a, &b);
+    math::is_equal(&a, &b);
 ```
 
 Check if two parameters which take an Any type are not equal value to each other
 ```
-    use r_unit::is_not_equal;
+    use r_unit::math;
 
     let a = 5;
     let b = 6;
     
-    is_not_equal::is_not_equal(&a, &b);
+    math::is_not_equal(&a, &b);
 ```
 
-## String Library
+### String Library
 
 Check if two parameters which take a &str type have the same length to each other 
 ```
@@ -42,4 +44,17 @@ Check if two parameters which take a &str type have the same length to each othe
     let b = "hi";
 
     string::matches_length(&a, &b);
+```
+
+Check if the provided parameter contains special characters, returns true or false
+```
+    use r_unit::string;
+
+    let a = "hi %";
+
+    if string::contains_special_characters(&a) {
+        println!("Contains special characters");
+    } else {
+        println!("Does not contain special character");
+    };
 ```
