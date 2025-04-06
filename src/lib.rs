@@ -1,7 +1,12 @@
-pub mod is_equal;
-pub mod is_not_equal;
-
+/// String Utility from r-unit
+///
+/// Provides functionality for operations on strings and string slices.
 pub mod string;
+
+/// Math Utility from r-unit
+/// 
+/// Provides general mathematical operators to compare an Any type
+pub mod math;
 
 #[cfg(test)]
 mod tests {
@@ -9,9 +14,12 @@ mod tests {
 
     #[test]
     fn test_exec() {
-        let a = "he";
-        let b = "hi";
+        let a = "hi %";
 
-        string::matches_length(&a, &b);
+        if string::contains_special_characters(&a) {
+            println!("Contains special characters.");
+        } else {
+            println!("Does not contain special characters.");
+        };
     }
 }
