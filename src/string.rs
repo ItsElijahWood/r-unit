@@ -3,7 +3,7 @@
 ///
 /// # Example:
 /// ```rust
-///     use r_unit::string;
+///    use r_unit::string;
 ///
 ///    let a = "hi";
 ///    let b = "hi";
