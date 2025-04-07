@@ -8,18 +8,28 @@ pub mod string;
 /// Provides general mathematical operators to compare an Any type
 pub mod math;
 
+/// Vec Utility from r-unit
+///
+/// Provides functionality for Vectors
+pub mod vec;
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn test_exec() {
-        let a = "hi";
+        let mut a: Vec<String> = Vec::new();
+        let string = String::from("h i");
 
-        if string::contains_numbers(&a) {
-            println!("Contains numbers");
+        let might_contain = String::from("hello");
+
+        a.push(string);
+
+        if vec::contains_element(&a, &might_contain) {
+            println!("Contains it.");
         } else {
-            println!("Does not contain numbers");
-        };
+            println!("Does not contain it.");
+        }
     }
 }
