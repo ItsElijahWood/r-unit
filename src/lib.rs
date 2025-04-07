@@ -14,12 +14,12 @@ mod tests {
 
     #[test]
     fn test_exec() {
-        let a = "hi %";
+        let a = "hi";
 
-        if string::contains_special_characters(&a) {
-            println!("Contains special characters.");
+        if string::contains_numbers(&a) {
+            println!("Contains numbers");
         } else {
-            println!("Does not contain special characters.");
+            println!("Does not contain numbers");
         };
     }
 }

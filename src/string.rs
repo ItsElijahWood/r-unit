@@ -41,5 +41,33 @@ pub fn contains_special_characters(a: &str) -> bool {
         }
     }
 
-    return false
+    false
+}
+
+/// Check if parameter 1 contains numbers in a string slice or not, returns true or false
+///
+/// # Example:
+/// ```rust
+///     use r_unit::string;
+///
+///     let a = "hi 3";
+///
+///     if string::contains_numbers(&a) {
+///         println!("Contains special characters.");
+///     } else {
+///         println!("Does not contain special characters.");
+///     };
+/// ```
+pub fn contains_numbers(a: &str) -> bool {
+    let numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+
+    let contains_numbers = numbers
+        .iter()
+        .any(|&number| a.contains(number));
+
+    if contains_numbers {
+        true
+    } else {
+        false
+    }
 }
