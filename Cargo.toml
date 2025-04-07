@@ -1,6 +1,6 @@
 [package]
 name = "r_unit"
-version = "0.1.5"
+version = "0.1.6"
 edition = "2024"
 description = "A fast and easy-to-use unit testing library."
 license = "MIT"

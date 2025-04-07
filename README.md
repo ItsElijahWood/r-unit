@@ -12,4 +12,4 @@ Add the library
 
 ## Documentation
 
-All documentation is on https://docs.rs/r_unit/0.1.4/r_unit/
+All documentation is on https://docs.rs/r_unit/0.1.6/r_unit/
