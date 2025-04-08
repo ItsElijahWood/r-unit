@@ -13,8 +13,8 @@
 ///     println!("Does not match string length.");
 ///    };
 /// ```
-pub fn matches_length(a: &str, b: &str) -> bool {
-    a.len() == b.len()
+pub fn matches_length(string: &str, string2: &str) -> bool {
+    string.len() == string2.len()
 }
 
 /// Check if parameter 1 contains special characters or not, returns true or false
@@ -31,14 +31,14 @@ pub fn matches_length(a: &str, b: &str) -> bool {
 ///         println!("Does not contain special characters.");
 ///     };
 /// ```
-pub fn contains_special_characters(a: &str) -> bool {
+pub fn contains_special_characters(string: &str) -> bool {
     let special_characters = [
         "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]",
         "{", "}", ";", ":", "'", "\"", "\\", "|", ",", ".", "<", ">", "/", "?", "`", "~"
     ];
 
     for character in special_characters {
-        if a.contains(character) {
+        if string.contains(character) {
             return true
         }
     }
@@ -60,8 +60,8 @@ pub fn contains_special_characters(a: &str) -> bool {
 ///         println!("Does not contain special characters.");
 ///     };
 /// ```
-pub fn contains_numbers(a: &str) -> bool {
-    a.chars().any(|number| number.is_numeric())
+pub fn contains_numbers(string: &str) -> bool {
+    string.chars().any(|number| number.is_numeric())
 }
 
 /// Check if parameter 1 contains any capital letters in a string slice or not, returns true or false
@@ -78,8 +78,8 @@ pub fn contains_numbers(a: &str) -> bool {
 ///         println!("Does not contain special characters.");
 ///     };
 /// ```
-pub fn contains_capital_letters(a: &str) -> bool {
-    a.chars().any(|c| c.is_uppercase())
+pub fn contains_capital_letters(string: &str) -> bool {
+    string.chars().any(|c| c.is_uppercase())
 }
 
 /// Check if parameter 1 contains default password requirements, returns true or false.

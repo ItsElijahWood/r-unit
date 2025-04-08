@@ -62,3 +62,78 @@ pub fn has_whitespace(vec: &Vec<String>) -> bool {
 pub fn contains_element<T: PartialEq>(vec: &[T], element: &T) -> bool {
     vec.contains(element)
 }
+
+/// Check if a vector is in order
+///
+/// # Example:
+/// ```rust
+///     use r_unit::vec;
+///
+///     let vector = vec![1, 2, 3, 4];
+///
+///     if vec::is_sorted(&vector) {
+///         println!("The vector is sorted.");
+///     } else {
+///         println!("The vector is not sorted.");
+///     };
+/// ```
+pub fn is_sorted<T: Ord>(vec: &[T]) -> bool {
+    vec.windows(2).all(|w| w[0] <= w[1])
+}
+
+/// Check if all elements in a vector are unique
+///
+/// # Example:
+/// ```rust
+///     use r_unit::vec;
+///
+///     let vector = vec![1, 2, 1, 4];
+///
+///     if vec::is_unique(&vector) {
+///         println!("The vector is unique.");
+///     } else {
+///         println!("The vector is not unique.");
+///     };
+/// ```
+pub fn is_unique<T: Eq + std::hash::Hash>(vec: &[T]) {
+    use std::collections::HashSet;
+
+    let mut seen = HashSet::new();
+    vec.iter().all(|item| seen.insert(item));
+}
+
+/// Find the minimum element in the vector
+///
+/// # Example:
+/// ```rust
+///     use r_unit::vec;
+///
+///     let vector = vec![1, 2, 3, 4];
+///
+///     if let Some(min) = vec::min_element(&vector) {
+///         println!("The minimum element in the vector is: {}.", min);
+///     } else {
+///         println!("The vector is empty.");
+///     };
+/// ```
+pub fn min_element<T: Ord>(vec: &[T]) -> Option<&T> {
+    vec.iter().min()
+}
+
+/// Find the maximum element in the vector
+///
+/// # Example:
+/// ```rust
+///     use r_unit::vec;
+///
+///     let vector = vec![1, 2, 3, 4];
+///
+///     if let Some(max) = vec::max_element(&vector) {
+///         println!("The maximum element in the vector is: {}.", max);
+///     } else {
+///         println!("The vector is empty.");
+///     };
+/// ```
+pub fn max_element<T: Ord>(vec: &[T]) -> Option<&T> {
+    vec.iter().max()
+}

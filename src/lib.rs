@@ -19,17 +19,10 @@ mod tests {
 
     #[test]
     fn test_exec() {
-        let mut a: Vec<String> = Vec::new();
-        let string = String::from("h i");
+        let vector = vec![2, 5, 100, 100];
 
-        let might_contain = String::from("hello");
-
-        a.push(string);
-
-        if vec::contains_element(&a, &might_contain) {
-            println!("Contains it.");
-        } else {
-            println!("Does not contain it.");
-        }
+        if let Some(min) = vec::max_element(&vector) {
+            println!("{}", min);
+        };
     }
 }
