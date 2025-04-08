@@ -116,6 +116,17 @@ pub fn is_even(num: &i32) {
     }
 }
 
+/// Checks whether parameter 1 is divisible by the divisor specified in parameter 2
+///
+/// # Examples
+/// ```rust
+/// use r_unit::math;
+///
+/// let a = 6;
+/// let diviser = 2;
+///
+/// math::can_divide(&a, diviser);
+/// ```
 pub fn can_divide(divided: &i32, diviser: i32) -> bool {
     if diviser == 0 {
         return false;

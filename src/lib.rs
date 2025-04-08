@@ -1,16 +1,8 @@
-/// String Utility from r-unit
-///
-/// Provides functionality for operations on strings and string slices.
+/// Provides functionality for operations on String and &str.
 pub mod string;
-
-/// Math Utility from r-unit
-/// 
-/// Provides general mathematical operators to compare an Any type
+/// Provides general mathematical operators to compare types implementing Any
 pub mod math;
-
-/// Vec Utility from r-unit
-///
-/// Provides functionality for Vectors
+/// Provides functionality for &Vec<T> and an array of any type
 pub mod vec;
 
 #[cfg(test)]

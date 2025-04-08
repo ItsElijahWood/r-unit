@@ -1,7 +1,7 @@
 # Git Instructions
 
 Update Cargo.toml to the new version
-Update README.md documentation link to the new version
+Update README.md documentation link and installation method to the new version
 
 ## Commands
 
