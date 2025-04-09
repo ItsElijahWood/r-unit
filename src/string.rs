@@ -7,11 +7,7 @@
 ///    let str1 = "hi";
 ///    let str2 = "hi";
 ///
-///    if string::matches_length(&str1, &str2) {
-///     println!("Matches string length.");
-///    } else {
-///     println!("Does not match string length.");
-///    };
+///    assert!(string::matches_length(&str1, &str2));
 /// ```
 pub fn matches_length(string: &str, string2: &str) -> bool {
     string.len() == string2.len()
@@ -25,11 +21,7 @@ pub fn matches_length(string: &str, string2: &str) -> bool {
 ///
 ///     let string = "hi %";
 ///
-///     if string::contains_special_characters(&string) {
-///         println!("Contains special characters.");
-///     } else {
-///         println!("Does not contain special characters.");
-///     };
+///     assert!(string::contains_special_characters(&string));
 /// ```
 pub fn contains_special_characters(string: &str) -> bool {
     let special_characters = [
@@ -54,11 +46,7 @@ pub fn contains_special_characters(string: &str) -> bool {
 ///
 ///     let string = "hi 3";
 ///
-///     if string::contains_numbers(&string) {
-///         println!("Contains special characters.");
-///     } else {
-///         println!("Does not contain special characters.");
-///     };
+///     assert!(string::contains_numbers(&string));
 /// ```
 pub fn contains_numbers(string: &str) -> bool {
     string.chars().any(|number| number.is_numeric())
@@ -72,11 +60,7 @@ pub fn contains_numbers(string: &str) -> bool {
 ///
 ///     let string = "Hi";
 ///
-///     if string::contains_capital_letters(&string) {
-///         println!("Contains special characters.");
-///     } else {
-///         println!("Does not contain special characters.");
-///     };
+///     assert!(string::contains_capital_letters(&string));
 /// ```
 pub fn contains_capital_letters(string: &str) -> bool {
     string.chars().any(|c| c.is_uppercase())
@@ -118,11 +102,7 @@ pub fn secure_password(password: &str) -> bool {
 ///
 ///     let string = "h i";
 ///
-///     if string::contains_whitespace(&string) {
-///         println!("Contains white space.");
-///     } else {
-///         println!("Does not contain white space.");
-///     };
+///     assert!(string::contains_whitespace(&string));
 /// ```
 pub fn contains_whitespace(a: &str) -> bool {
     a.chars().any(|char| char.is_whitespace())

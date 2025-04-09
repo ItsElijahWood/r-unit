@@ -4,6 +4,8 @@ pub mod string;
 pub mod math;
 /// Provides functionality for &Vec<T> and an array of any type
 pub mod vec;
+/// Provides functionality for hashmaps
+pub mod map;
 
 #[cfg(test)]
 mod tests {
@@ -11,10 +13,8 @@ mod tests {
 
     #[test]
     fn test_exec() {
-        let vector = vec![2, 5, 100, 100];
+        let vector = vec![1, 2, 3, 4];
 
-        if let Some(min) = vec::max_element(&vector) {
-            println!("{}", min);
-        };
+        assert!(vec::is_unique(&vector));
     }
 }

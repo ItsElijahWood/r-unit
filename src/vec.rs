@@ -53,11 +53,7 @@ pub fn has_whitespace(vec: &Vec<String>) -> bool {
 ///
 ///     vec.push(string);
 ///
-///     if vec::contains_element(&vec, &might_contain) {
-///         println!("Contains {}.", might_contain);
-///     } else {
-///         println!("Does not contain {}.", might_contain);
-///     };
+///     assert!(vec::contains_element(&vec, &might_contain));
 /// ```
 pub fn contains_element<T: PartialEq>(vec: &[T], element: &T) -> bool {
     vec.contains(element)
@@ -71,11 +67,7 @@ pub fn contains_element<T: PartialEq>(vec: &[T], element: &T) -> bool {
 ///
 ///     let vector = vec![1, 2, 3, 4];
 ///
-///     if vec::is_sorted(&vector) {
-///         println!("The vector is sorted.");
-///     } else {
-///         println!("The vector is not sorted.");
-///     };
+///     assert!(vec::is_sorted(&vector));
 /// ```
 pub fn is_sorted<T: Ord>(vec: &[T]) -> bool {
     vec.windows(2).all(|w| w[0] <= w[1])
@@ -89,17 +81,13 @@ pub fn is_sorted<T: Ord>(vec: &[T]) -> bool {
 ///
 ///     let vector = vec![1, 2, 1, 4];
 ///
-///     if vec::is_unique(&vector) {
-///         println!("The vector is unique.");
-///     } else {
-///         println!("The vector is not unique.");
-///     };
+///     assert!(vec::is_unique(&vector));
 /// ```
-pub fn is_unique<T: Eq + std::hash::Hash>(vec: &[T]) {
+pub fn is_unique<T: Eq + std::hash::Hash>(vec: &[T]) -> bool {
     use std::collections::HashSet;
 
     let mut seen = HashSet::new();
-    vec.iter().all(|item| seen.insert(item));
+    vec.iter().all(|item| seen.insert(item))
 }
 
 /// Find the minimum element in the vector
