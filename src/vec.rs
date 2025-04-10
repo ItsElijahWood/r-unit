@@ -5,15 +5,7 @@
 ///     use r_unit::vec;
 ///
 ///     let mut vec: Vec<String> = Vec::new();
-///     let string = String::from("Hi");
-///
-///     vec.push(string);
-///
-///     if vec::is_empty(&vec) {
-///         println!("Empty.");
-///     } else {
-///         println!("Not empty.");
-///     };
+///     assert!(vec::is_empty(&vec));
 /// ```
 pub fn is_empty<T>(vec: &[T]) -> bool {
     vec.is_empty()
@@ -30,13 +22,9 @@ pub fn is_empty<T>(vec: &[T]) -> bool {
 ///
 ///     vec.push(string);
 ///
-///     if vec::has_whitespace(&vec) {
-///         println!("Contains whitespace.");
-///     } else {
-///         println!("Does not contain whitespace.");
-///     };
+///     assert!(vec::contains_whitespace(&vec));
 /// ```
-pub fn has_whitespace(vec: &Vec<String>) -> bool {
+pub fn contains_whitespace(vec: &Vec<String>) -> bool {
     vec.iter().any(|v| v.chars().any(|s| s.is_whitespace()))
 }
 
@@ -79,11 +67,14 @@ pub fn is_sorted<T: Ord>(vec: &[T]) -> bool {
 /// ```rust
 ///     use r_unit::vec;
 ///
-///     let vector = vec![1, 2, 1, 4];
+///     let vector = vec![1, 2, 3, 4];
 ///
 ///     assert!(vec::is_unique(&vector));
 /// ```
-pub fn is_unique<T: Eq + std::hash::Hash>(vec: &[T]) -> bool {
+pub fn is_unique<T>(vec: &[T]) -> bool
+where
+    T: Eq + std::hash::Hash,
+{
     use std::collections::HashSet;
 
     let mut seen = HashSet::new();

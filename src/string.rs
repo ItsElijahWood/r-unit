@@ -13,7 +13,7 @@ pub fn matches_length(string: &str, string2: &str) -> bool {
     string.len() == string2.len()
 }
 
-/// Check if parameter 1 contains special characters or not, returns true or false
+/// Check if parameter 1 contains special characters or not
 ///
 /// # Example:
 /// ```rust
@@ -24,21 +24,10 @@ pub fn matches_length(string: &str, string2: &str) -> bool {
 ///     assert!(string::contains_special_characters(&string));
 /// ```
 pub fn contains_special_characters(string: &str) -> bool {
-    let special_characters = [
-        "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]",
-        "{", "}", ";", ":", "'", "\"", "\\", "|", ",", ".", "<", ">", "/", "?", "`", "~"
-    ];
-
-    for character in special_characters {
-        if string.contains(character) {
-            return true
-        }
-    }
-
-    false
+    string.chars().any(|c| !c.is_ascii_alphanumeric())
 }
 
-/// Check if parameter 1 contains numbers in a string slice or not, returns true or false
+/// Check if parameter 1 contains numbers in a string slice or not
 ///
 /// # Example:
 /// ```rust
@@ -52,7 +41,7 @@ pub fn contains_numbers(string: &str) -> bool {
     string.chars().any(|number| number.is_numeric())
 }
 
-/// Check if parameter 1 contains any capital letters in a string slice or not, returns true or false
+/// Check if parameter 1 contains any capital letters in a string slice or not
 ///
 /// # Example:
 /// ```rust
@@ -66,7 +55,7 @@ pub fn contains_capital_letters(string: &str) -> bool {
     string.chars().any(|c| c.is_uppercase())
 }
 
-/// Check if parameter 1 contains default password requirements, returns true or false.
+/// Check if parameter 1 contains default password requirements
 /// # Default requirements:
 /// ```text
 ///     contains at least 1 capital letter
@@ -94,7 +83,7 @@ pub fn secure_password(password: &str) -> bool {
         &&  password.len() >= 8
 }
 
-/// Check if parameter 1 contains any whitespace, returns true or false
+/// Check if parameter 1 contains any whitespace
 ///
 /// # Example:
 /// ```rust
